@@ -1,6 +1,6 @@
 'use strict';
 import formatarCep from "../regex/removerCaracteres.js";
-import { mostrarAlerta } from "../ui/toast/toastController.js";
+import { mostrarAlerta } from "../ui/toast/showToast.js";
 
 
 

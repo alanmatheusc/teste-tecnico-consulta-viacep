@@ -1,5 +1,10 @@
+'use strict';
+// Este arquivo é responsável por renderizar o formulário com os dados retornados da API ViaCEP.
+
+let formulario = document.getElementsByClassName('addressFields');
+
+
 function renderizarCepForm(adress) {
-  let formulario = document.getElementsByClassName('addressFields');
   for (let i = 0; i < formulario.length; i++) {
     formulario[i].classList.remove('d-none');
   }
@@ -9,4 +14,11 @@ function renderizarCepForm(adress) {
   document.querySelector('input[placeholder="Estado"]').value = adress.uf;
 }
 
-export { renderizarCepForm };
+
+function removerCepForm() {
+  for (let i = 0; i < formulario.length; i++) {
+    formulario[i].classList.add('d-none');
+  }
+}
+
+export { renderizarCepForm, removerCepForm };

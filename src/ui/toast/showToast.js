@@ -1,4 +1,5 @@
 'use strict';
+// Esse arquivo é responsável por controlar os toasts de sucesso e erro na aplicação.
 
 const toasterSucess = document.getElementById('toastSucess');
 const toasterError = document.getElementById('toastError');
