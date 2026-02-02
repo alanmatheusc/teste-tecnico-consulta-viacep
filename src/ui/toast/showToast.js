@@ -35,6 +35,13 @@ function mostrarToastErroRequisicao() {
   toastBootstrap.show();
 }
 
+function mostrarSpinner() {
+  const spinner = document.getElementById('spinner');
+  spinner.classList.remove('d-none');
+}
+function esconderSpinner() {
+  const spinner = document.getElementById('spinner');
+  spinner.classList.add('d-none');
+}
 
-
-export { mostrarToastSucesso, mostrarAlerta, mostrarToastErroRequisicao };
+export { mostrarToastSucesso, mostrarAlerta, mostrarToastErroRequisicao, mostrarSpinner, esconderSpinner };

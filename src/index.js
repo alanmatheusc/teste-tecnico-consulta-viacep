@@ -3,7 +3,7 @@ import { ehComprimentoValido } from './validators/cepValidator.js'
 import { aplicarMascaraCep } from './ui/masks/cepMask.js';
 import { getDadosPeloCep } from './services/viaCepService.js';
 import formatarCep from './regex/removerCaracteres.js';
-import { mostrarToastSucesso, mostrarToastErroRequisicao } from './ui/toast/showToast.js';
+import { mostrarToastSucesso, mostrarToastErroRequisicao, mostrarSpinner, esconderSpinner } from './ui/toast/showToast.js';
 import { renderizarCepForm, removerCepForm } from './ui/cepForm/renderizarCepForm.js';
 
 let cep = document.getElementById('cepInput');
@@ -16,9 +16,11 @@ async function handleSubmit(e) {
     let cepInput = document.getElementById('cepInput').value;
     cepInput = formatarCep(cepInput);
     removerCepForm();
+    mostrarSpinner();
 
     const dadosLogradouro = await getDadosPeloCep(cepInput)
     validarRequisicao(dadosLogradouro);
+    esconderSpinner();
   }
 }
 function validarRequisicao(dados) {

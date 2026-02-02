@@ -13,17 +13,16 @@
 </head>
 
 <body>
-  <header class="bg-primary text-white text-center py-4 mb-4">
+  <header class="bg-primary text-white text-center py-3 mb-4">
     <div class="container">
       <nav>
         <a href="index.html" class="text-white text-decoration-none">
           <h1 class="h3 mb-0">MeuLogradouro</h1>
-          <p class="mb-0">A busca mais rápida do Brasil</p>
         </a>
       </nav>
     </div>
   </header>
-  <div class="toast-container position-fixed top-0 end-0 p-3">
+  <div class="toast-container position-fixed top-0 end-0 p-1">
     <div id="toastSucess" class="toast text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <strong class="me-auto">Successo!</strong>
@@ -33,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="toast-container position-fixed top-0 end-0 p-3">
+  <div class="toast-container position-fixed top-0 end-0 p-1">
     <div id="toastError" class="toast text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <strong class="me-auto">Erro!</strong>
@@ -47,12 +46,18 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card p-4 shadow-sm">
-          <h2 class="card-title mb-4 text-center">Buscar CEP</h2>
+          <h4 class="card-title mb-4 text-center">Busque seu CEP</h4>
           <form id="cepForm">
             <div class="mb-3">
               <label for="cepInput" class="form-label">Digite o CEP:</label>
-              <input type="text" class="form-control" id="cepInput" placeholder="Ex: 01001-000" maxlength="9"
-                inputmode="numeric" required>
+              <div class="d-flex">
+                <input type="text" class="form-control" id="cepInput" placeholder="Ex: 01001-000" maxlength="9"
+                  inputmode="numeric" required>
+                <div class="spinner-border text-primary m-1 d-none" id="spinner" role="status">
+                </div>
+              </div>
+
+
               <div id="containerAlerta"></div>
 
             </div>
